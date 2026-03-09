@@ -1,0 +1,125 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.calculator {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 320px;
+}
+
+.display {
+    background-color: #222;
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: right;
+    padding: 20px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 80px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(60px, auto);
+}
+
+.btn {
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s, filter 0.2s;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: #eaeaea;
+}
+
+.btn:active {
+    background-color: #d4d4d4;
+}
+
+.btn-operator {
+    background-color: #ff9500;
+    color: white;
+    border-color: #d17b00;
+}
+
+.btn-operator:hover {
+    background-color: #e08300;
+}
+
+.btn-operator:active {
+    background-color: #c27100;
+}
+
+.btn-clear {
+    background-color: #ff3b30;
+    color: white;
+    grid-column: span 1;
+}
+
+.btn-clear:hover {
+    background-color: #e0342b;
+}
+
+.btn-clear:active {
+    background-color: #c22d25;
+}
+
+.btn-equal {
+    background-color: #34c759;
+    color: white;
+}
+
+.btn-equal:hover {
+    background-color: #2dae4e;
+}
+
+.btn-equal:active {
+    background-color: #269643;
+}
+
+/* Adjustments for a better grid layout */
+.buttons {
+    grid-template-areas:
+        "clear div mult sub"
+        "seven eight nine add"
+        "four five six add"
+        "one two three eq"
+        "zero zero dec eq";
+}
+
+#clear { grid-area: clear; }
+#divide { grid-area: div; }
+#multiply { grid-area: mult; }
+#subtract { grid-area: sub; }
+
+.buttons > :nth-child(5) { grid-area: seven; }
+.buttons > :nth-child(6) { grid-area: eight; }
+.buttons > :nth-child(7) { grid-area: nine; }
+#add { grid-area: add; }
+
+.buttons > :nth-child(9) { grid-area: four; }
+.buttons > :nth-child(10) { grid-area: five; }
+.buttons > :nth-child(11) { grid-area: six; }
+
+.buttons > :nth-child(12) { grid-area: one; }
+.buttons > :nth-child(13) { grid-area: two; }
+.buttons > :nth-child(14) { grid-area: three; }
+#equals { grid-area: eq; }
+
+.buttons > :nth-child(16) { grid-area: zero; }
+#decimal { grid-area: dec; }
