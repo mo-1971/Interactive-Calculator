@@ -11,10 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
         display.textContent = currentInput;
     }
 
-    function handleNumber(numberStr) {
-        if (currentInput === '0' || shouldResetDisplay) {
-            currentInput = numberStr;
+    function resetDisplayIfNeeded() {
+        if (shouldResetDisplay) {
+            currentInput = '0';
             shouldResetDisplay = false;
+        }
+    }
+
+    function handleNumber(numberStr) {
+        resetDisplayIfNeeded();
+        if (currentInput === '0') {
+            currentInput = numberStr;
         } else {
             currentInput += numberStr;
         }
@@ -76,10 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleDecimal() {
-        if (shouldResetDisplay) {
-            currentInput = '0.';
-            shouldResetDisplay = false;
-        } else if (!currentInput.includes('.')) {
+        resetDisplayIfNeeded();
+        if (!currentInput.includes('.')) {
             currentInput += '.';
         }
         updateDisplay();
