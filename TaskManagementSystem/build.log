@@ -1,0 +1,15 @@
+Building project ...
+Build Failed.
+
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+/app/TaskManagementSystem/Program.cs(10,13): error CS1061: 'DbContextOptionsBuilder' does not contain a definition for 'UseSqlite' and no accessible extension method 'UseSqlite' accepting a first argument of type 'DbContextOptionsBuilder' could be found (are you missing a using directive or an assembly reference?) [/app/TaskManagementSystem/TaskManagementSystem.csproj]
+
+Build FAILED.
+
+/app/TaskManagementSystem/Program.cs(10,13): error CS1061: 'DbContextOptionsBuilder' does not contain a definition for 'UseSqlite' and no accessible extension method 'UseSqlite' accepting a first argument of type 'DbContextOptionsBuilder' could be found (are you missing a using directive or an assembly reference?) [/app/TaskManagementSystem/TaskManagementSystem.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:01.72
+RunTime 00:00:06.14
